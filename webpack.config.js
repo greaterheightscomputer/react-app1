@@ -1,5 +1,5 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');  //node way of importing third party library
+const ExtractTextPlugin = require('extract-text-webpack-plugin');  //node way of importing third party library
 
 module.exports = (env) => {
     // console.log('env', env);
