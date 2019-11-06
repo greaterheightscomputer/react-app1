@@ -8,7 +8,7 @@ import selectExpenses from '../selectors/expenses';
 export const ExpenseList = (props) => (
     <div>             
         {
-            props.expenses.length === 0 ? (
+            props.expenses.length === 0 ? (   //expenses is from mapStateToProps 
                 <p>No expenses</p>
             ) : (
                 props.expenses.map((expense) => {
@@ -20,7 +20,7 @@ export const ExpenseList = (props) => (
 );
 
 //Redux store
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { //mapStateToProps it is a function that fetch data from the redux store
     return {
         expenses: selectExpenses(state.expenses, state.filters)
         // expenses: state.expenses,
@@ -31,5 +31,11 @@ const mapStateToProps = (state) => {
 // Higher Order Component
 // connect -> connect the component with redux store
 // this connection allow our component to access any data from the redux store
-export default connect(mapStateToProps)(ExpenseList);
+export default connect(mapStateToProps)(ExpenseList); //combinating the store with the component
 
+// const ConnectedExpensesList = connect((state) => {
+//     return {
+//         expenses: state.expenses
+//     };
+// })(ExpenseList);
+// export default ConnectedExpensesList;
