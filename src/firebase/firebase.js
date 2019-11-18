@@ -1,39 +1,41 @@
 import * as firebase from 'firebase'; //means select all named export and store them on a new variable called firebase
 
  // Your web app's Firebase configuration
-//  const firebaseConfig = {   //all this is equvelent to our password
-//       apiKey: "AIzaSyBxGkK2-0spvf_E3-CkckffmsrXI2fF_J8", 
-//       authDomain: "expensify-d7fd6.firebaseapp.com",
-//       databaseURL: "https://expensify-d7fd6.firebaseio.com",
-//       projectId: "expensify-d7fd6",
-//       storageBucket: "",
-//       messagingSenderId: "557135628237",
-//       appId: "1:557135628237:web:bf18596458823695"
-//   };
-
+ const firebaseConfig = {   //all this is equvelent to our password
+    apiKey: "AIzaSyBxGkK2-0spvf_E3-CkckffmsrXI2fF_J8",
+    authDomain: "expensify-d7fd6.firebaseapp.com",
+    databaseURL: "https://expensify-d7fd6.firebaseio.com",
+    projectId: "expensify-d7fd6",
+    storageBucket: "expensify-d7fd6.appspot.com",
+    messagingSenderId: "557135628237",
+    appId: "1:557135628237:web:bf18596458823695"
+  };
+  
 //firebase configuration setting for sharing two different database
-  const firebaseConfig = {  
-    apiKey: process.env.FIREBASE_API_KEY, 
-    authDomain: process.env.FIREBASE_AUTHDOMAIN,
-    databaseURL: process.env.FIREBASE_DATABASEURL,
-    projectId: process.env.FIREBASE_PROJECTID,
-    storageBucket: process.env.FIREBASE_STORAGEBUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
-    appId: process.env.FIREBASE_APPID
-};
+//   const firebaseConfig = {  
+//     apiKey: process.env.FIREBASE_API_KEY, 
+//     authDomain: process.env.FIREBASE_AUTHDOMAIN,
+//     databaseURL: process.env.FIREBASE_DATABASEURL,
+//     projectId: process.env.FIREBASE_PROJECTID,
+//     storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+//     messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+//     appId: process.env.FIREBASE_APPID
+// };
   // Initialize Firebase to work with the specific application provided 
+
   firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
-const googleAuthProvider = new firebase.auth.GoogleAuthProvider();  //creating an instance of googleProvider
+// const googleAuthProvider = new firebase.auth.GoogleAuthProvider();  //creating an instance of googleProvider
 
-export { firebase, googleAuthProvider, database as default } ;
+// export { firebase, googleAuthProvider, database as default } ;
+export { firebase, database as default } ;
 
 
-//test database connection
+// test database connection
   // firebase.database().ref().set({
   //     name: 'Khadijat Abimbola'
-//   });
+  // });
 
 // database() is a function inside firebase that is use to access our database.
 //ref() is use to reference part of our database or access  a specific table.

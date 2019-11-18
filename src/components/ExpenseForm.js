@@ -42,13 +42,13 @@ export default class ExpenseForm extends React.Component {
     onFocusChange = ({ focused }) => { //destructuring of {focused}
         this.setState(() => ({ calendarFocused: focused }));
     };
-    onSubmit = (e) => {
+    onSubmits = (e) => {
         e.preventDefault();  //prevent full page refresh
         if (!this.state.description || !this.state.amount){
             this.setState(() => ({ error: 'Please provide description or amount' }));            
         }else{
             this.setState(() => ({ error: '' }));  
-            this.props.onSubmits({  //we pass the data out of the ExpenseForm by calling the props from the parent component we did that beco's we want to use the ExpenseForm on AddExpensePage and later on EditExpensePage 
+            this.props.onSubmit({  //we pass the data out of the ExpenseForm by calling the props from the parent component we did that beco's we want to use the ExpenseForm on AddExpensePage and later on EditExpensePage 
                 description: this.state.description,
                 amount: parseFloat(this.state.amount, 10) * 100,
                 createdAt: this.state.createdAt.valueOf(),     //valueOf() return moment in milliseconds value
