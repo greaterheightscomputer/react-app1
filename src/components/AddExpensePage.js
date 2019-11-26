@@ -4,7 +4,7 @@ import ExpenseForm from './ExpenseForm';
 import { addExpense } from '../actions/expenses';
 
 export class AddExpensePage extends React.Component {
-    onSubmit = (expense) => {           //event method      
+    onSubmited = (expense) => {           //event method      
            this.props.addExpense(expense)   //addExpense is an Action Generator Function will pass data to reducer then reducer will pass the data to redux store
            this.props.history.push('/');    //history.push('/') its will take us back to the Dashboard after submittion 
     };
@@ -13,7 +13,7 @@ export class AddExpensePage extends React.Component {
             <div>
                <h1>Add Expense</h1>
                 <ExpenseForm       //the <ExpenseForm/> component will render form to the browser 
-                    onSubmit={this.onSubmit} //the onSubmits props will get data from ExpenseForm component on this.props.onSubmits() function and pass in the values set properties to addExpense Action Generator Function and go back to the Dashboard
+                    onSubmits={this.onSubmited} //the onSubmits props will get data from ExpenseForm component on this.props.onSubmits() function and pass in the values set properties to addExpense Action Generator Function and go back to the Dashboard
                 />
             </div>
         );

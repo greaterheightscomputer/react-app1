@@ -8,7 +8,7 @@ import database from '../firebase/firebase';
 //     expense
 // });
 
-export const addExpense = ({description='', note='', amount='', createdAt=''}={}) => ({
+export const addExpense = ({description='', note='', amount=0, createdAt=0}={}) => ({
     type: 'ADD_EXPENSE',
     expense: {
         id: uuid(),
@@ -45,7 +45,7 @@ export const removeExpense = ( { id } = {}) => ({
 });
 
 // EDIT_EXPENSE  
-export const editEpense = (id, updates) => ({
+export const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
     id,
     updates
