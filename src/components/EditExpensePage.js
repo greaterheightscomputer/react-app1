@@ -17,7 +17,7 @@ export class EditExpensePage extends React.Component {
             <div>
                 <ExpenseForm   
                     expense={this.props.expense} //its will get expense properties from mapStateToProps property expense (redux store) and set on the application state as a result once user click on the description property link on the DashboardPage its will populate the text fields with values.  
-                    onSubmits={this.onSubmited} //its get the edited data from the sub-class ExpenseForm and pass to editEpense() Action Generator Function
+                    onSubmit={this.onSubmited} //its get the edited data from the sub-class ExpenseForm and pass to editEpense() Action Generator Function
                 />
                 <button onClick={this.onRemove}>Remove</button>
             </div>

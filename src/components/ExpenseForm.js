@@ -24,9 +24,10 @@ export default class ExpenseForm extends React.Component {
         this.setState(() => ({ description }));
     };
     onNoteChange = (e) => {
-        // const note = e.target.value;
-        e.persist();
-        this.setState(() => ({ note: e.target.value }));
+        const note = e.target.value;        
+        this.setState(() => ({ note }));
+        // e.persist();
+        // this.setState(() => ({ note: e.target.value }));
     };
     onAmountChange = (e) => {
         const amount = e.target.value;
@@ -60,7 +61,7 @@ export default class ExpenseForm extends React.Component {
         return (
             <div>
                 {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmits}>
                     <input 
                         type="text" 
                         placeholder="Description" 

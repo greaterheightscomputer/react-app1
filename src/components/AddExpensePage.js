@@ -13,7 +13,7 @@ export class AddExpensePage extends React.Component {
             <div>
                <h1>Add Expense</h1>
                 <ExpenseForm       //the <ExpenseForm/> component will render form to the browser 
-                    onSubmits={this.onSubmited} //the onSubmits props will get data from ExpenseForm component on this.props.onSubmits() function and pass in the values set properties to addExpense Action Generator Function and go back to the Dashboard
+                    onSubmit={this.onSubmited} //the onSubmit props will get data from ExpenseForm component on this.props.onSubmit() function and pass in the values set properties to addExpense Action Generator Function and go back to the Dashboard
                 />
             </div>
         );
@@ -24,10 +24,9 @@ export class AddExpensePage extends React.Component {
 //         <h1>Add Expense</h1>
 //         <ExpenseForm
 //            onSubmit={(expense) => {
-//             //    console.log(expense)
-//             //    props.dispatch(addExpense(expense));  //on this line we are doing two things, we calling props.dispatch() which can easily be a spy or fake function but addExpense(expense) cannot be a spy or fake function beco's its imported and it is not pass in as a props, as a result will need to use a function that is pass to connect() which is called mapDispatchToProps which will help us to pass addExpense(expense) to props for easy testing.  
-//                props.onSubmit(expense)
-//                props.history.push('/');
+//             console.log(expense)
+//             props.dispatch(addExpense(expense));  //on this line we are doing two things, we calling props.dispatch() which can easily be a spy or fake function but addExpense(expense) cannot be a spy or fake function beco's its imported and it is not pass in as a props, as a result will need to use a function that is pass to connect() which is called mapDispatchToProps which will help us to pass addExpense(expense) to props for easy testing.           
+//             props.history.push('/');
 //            }}        
 //         />
 //     </div>
