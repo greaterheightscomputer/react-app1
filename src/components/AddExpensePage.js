@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import { addExpense } from '../actions/expenses';
+import { startAddExpense } from '../actions/expenses';
 
 export class AddExpensePage extends React.Component {
     onSubmited = (expense) => {           //event method      
-           this.props.addExpense(expense)   //addExpense is an Action Generator Function will pass data to reducer then reducer will pass the data to redux store
+           this.props.startAddExpense(expense)   //addExpense is an Action Generator Function will pass data to reducer then reducer will pass the data to redux store
            this.props.history.push('/');    //history.push('/') its will take us back to the Dashboard after submittion 
     };
     render() {
@@ -34,7 +34,7 @@ export class AddExpensePage extends React.Component {
 
 // mapDispatchToProps is a way to return your dispatch function, allowing you to extract or sperate them from the component itself. It will also allow you to pass Action Generator Function to props for easy testing.   
 const mapDispatchToProps = (dispatch) => ({
-    addExpense: (expense) => dispatch(addExpense(expense))
+    startAddExpense: (expense) => dispatch(startAddExpense(expense))
 });
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);
