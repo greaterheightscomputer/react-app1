@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should setup set expense action object with data 1`] = `
+Object {
+  "expenses": Array [
+    Object {
+      "amount": 195,
+      "createdAt": 0,
+      "description": "Gum",
+      "id": "1",
+      "note": "",
+    },
+    Object {
+      "amount": 109500,
+      "createdAt": -345600000,
+      "description": "Rent",
+      "id": "2",
+      "note": "",
+    },
+    Object {
+      "amount": 4500,
+      "createdAt": 345600000,
+      "description": "Credit Card",
+      "id": "3",
+      "note": "",
+    },
+  ],
+  "type": "SET_EXPENSES",
+}
+`;
