@@ -26,11 +26,10 @@ import * as firebase from 'firebase'; //means select all named export and store 
 firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
-// const googleAuthProvider = new firebase.auth.GoogleAuthProvider();  //creating an instance of googleProvider
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();  //creating an instance of googleProvider
 
-// export { firebase, googleAuthProvider, database as default } ;
-export { firebase, database as default } ;
-
+export { firebase, googleAuthProvider, database as default } ;
+// export { firebase, database as default } ;
 
 // test database connection
   // firebase.database().ref().set({
