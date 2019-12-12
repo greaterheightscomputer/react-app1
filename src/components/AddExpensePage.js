@@ -11,10 +11,16 @@ export class AddExpensePage extends React.Component {
     render() {
         return(
             <div>
-               <h1>Add Expense</h1>
-                <ExpenseForm       //the <ExpenseForm/> component will render form to the browser 
+                <div className="page-header">
+                    <div className="content-container">
+                        <h1 className="page-header__title">Add Expense</h1>
+                    </div>
+                </div>
+                <div className="content-container">
+                    <ExpenseForm       //the <ExpenseForm/> component will render form to the browser 
                     onSubmit={this.onSubmited} //the onSubmit props will get data from ExpenseForm component on this.props.onSubmit() function and pass in the values set properties to addExpense Action Generator Function and go back to the Dashboard
-                />
+                    />
+                </div>                
             </div>
         );
     }

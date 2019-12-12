@@ -1,0 +1,11 @@
+.show-for-mobile {
+    @media (min-width: $desktop-breakpoint) {
+        display: none;        
+    }
+}
+
+.show-for-desktop {
+    @media (max-width: $desktop-breakpoint - .01rem) { //.01rem will make sure that the two selector does not occur at the sametime 
+        display: none;        
+    }
+}
